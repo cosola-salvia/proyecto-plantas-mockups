@@ -5,7 +5,7 @@
 
 body {
 	font-family: 'Roboto', sans-serif;
-	margin: 0px;
+	margin: 0;
 	min-height: calc(100vh - 100px);
 }
 
@@ -19,284 +19,61 @@ img {
 	height: auto;
 }
 
-.header {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-}
-
-.header__title {
-	grid-column: span 3;
-	padding: 10px 0;
-	font-size: 30px;
-	text-align: center;
-	color: #3e4444;
-	background-color: #bdcebe;
-	border-top: 2px solid #000;
-	border-right: 2px solid #000;
-	border-left: 2px solid #000;
-}
-
-.links-from-nav {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-}
-
-.links-from-nav a {
-	padding: 10px;
-	text-align: center;
-	border-top: 2px solid #405d27;
-	border-right: 2px solid #405d27;
-	border-bottom: 2px solid #405d27;
-}
-
-.top-nav__links {
-	grid-column: span 2;
-	overflow: hidden;
-	background-color: #e3eaa7;
-}
-
-.top-nav__input_search {
-	border: 2px solid #405d27;
-	background-color: #e3eaa7;
-	text-align: center;
-}
-
-.dropdown {
-	text-align: center;
-	padding: 10px 0;
-	border-top: 2px solid #405d27;
-	border-right: 2px solid #405d27;
-	border-bottom: 2px solid #405d27;
-}
-
-.dropdown a {
-	border: none;
-}
-
-.dropdown__content {
-	display: none;
-	position: absolute;
-	background-color:  green; /*#f5f7f4;*/
+.blog-header {
+	margin-top: 0;
 	width: 100%;
-	left: 0;
+	height: 300px;
 }
 
-.dropdown__content_heading {
-	padding: 5px;
-	background-color: #d9ecd0; /*hsla(0, 0%, 1%, 0.03);*/
-	color: #3e4444;
-	font-weight: 300;
-	font-size: 1.5rem;
+.logo {
+	margin-top: 0px;
+	margin-left: 0px;
+	width: 250px;
+	height: 264px;
 }
 
-.dropdown:hover .dropdown__content {
-	display: block;
-	margin-top: 12px;
-}
-
-.top-nav__links a:hover, .dropdown:hover {
-  	background-color: #d9ecd0;
-}
-
-.dropdown__content_items {
-  padding: 15px 0px;
-  display: block;
-  font-size: 1.20rem;
-  text-align: center;
-  background-color: #e6ffe6;
-  height: 80px;
-}
-
-/*.dropdown__content_items a {
-  padding: 5px;
-  display: block;
-  font-size: 1.20rem;
-  text-align: center;
-}*/
-
-.dropdown__content_items a:hover {
-  background-color: hsl(75, 100%, 95%);
-}
-
-.large-hero {
-	height: 450px;
-	background-image: url('../images/planta02.jpg');
-	background-size: cover;
-}
-.hero-banner {
-	width: 100vw;
-	height: 15vw;
-	background-color: #000;
-	border-bottom: 2px solid green;
-}
-
-.banner{
-	width: 95vw;
-	display: grid;
-	grid-gap: 20px;
-	grid-template-columns: repeat(3, 1fr);
-	justify-content: center;
-	align-content: center;
-
-}
-
-.banner__content {
-	margin-top: 20px;
-	margin-bottom: 0px;
-}
-
-.banner__content ul {
-	display: grid;
-	grid-gap: 10px;
-	list-style: none;
-	grid-template-rows: repeat(auto-fit, minmax(50px, 1fr));
-	align-items: end;
-	justify-content: center;
-}
-.banner__content a {
-	text-decoration: none;
-	padding: 10px;
-	color: white;
-	font-size: 1.3rem;
-}
-.banner__content--picture-title {
-	font-size: 2.75rem;
-	color: white;
-	margin-left: 30px;
-	margin-top: 15px;
-	margin-bottom: 0px;
-}
-.banner__content--picture-desc {
-	font-size: 1.3rem;
-	color: white;
-	margin-left: 30px;
-	margin-bottom: 0px;
-}
-.btn-medium--orange {
-	background-color: #ccb508;
-  border: 2px solid #f4df95;
-	padding: 15px 20px;
-	margin-top: 18px;
-	text-transform: uppercase;
-	float: right;
-}
 .wrapper {
-  width: 90vw;
-	/*display: grid;*/
+	width: 90vw;
 	margin-top: 3.5rem;
 	margin-left: auto;
 	margin-right: auto;
 }
-.plant-collections {
+
+.plant-blog {
 	display: grid;
-	grid-gap: 2.5rem;
-	grid-template-columns: repeat(auto-fit, minmax(400px, auto));
-}
-.plant-collection {
-	display: grid;
-	grid-template-rows: 350px 150px;
-	grid-gap: 2rem;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-/*	padding: 15px;*/
-	align-items:start;
-	justify-content: center;
+	grid-template-columns: 250px 1fr 250px;
+	grid-auto-rows: auto;
+	grid-gap: 20px;
+	grid-template-areas: 
+	"blog-title blog-title blog-title"
+	"plant-biology overviews species-families";
 }
 
-.wrapper__content {
-	margin: 50px 50px 30px;
+.blog-title {
+	grid-area: blog-title;
+}
+.overviews {
+	grid-area: overviews;
 }
 
-.section-selection {
-	display: grid;
-	grid-template-columns: repeat(6, 1fr);
-	grid-gap: 15px;
+.plant-bilogy {
+	grid-area: plant-biology;
 }
 
-.section-selection__title {
-	grid-column: span 6;
-	font-weight: 300;
-	font-size: 2.0rem;
-	color: #7c7c7c;
+.species-families {
+	grid-area: species-families;
 }
 
-/*.section-selection__images img {
-	border: 2px solid #7c7c7c;
-} play no role*/
-
-.more-info {
-	grid-column: span 6;
-	background-color: rgba(16, 109, 7, 0.7);
-	border: 2px groove #274418;
-	text-align: center;
-	margin-top: 40px;
-	padding-top: 30px;
-	margin-bottom: 50px;
+.plant-type-family {
+  margin-bottom: 30px;
 }
 
-.more-info__text {
-	font-size: 35px;
+.plant-features {
+  margin-bottom: 30px;
 }
 
-.btn-small--orange {
-	color: #122b06;
-	padding: 10px;
-	text-transform: uppercase;
-	font-size: 20px;
-	background-color: #ccb508;
-	border: 2px solid #f4df95;
-/*	border-radius: 5px;*/
-	margin-left: 40px;
-}
-
-.services {
-	display: grid;
-	grid-template-columns: 80% 1fr;
-	/*background-color: #cccccc; */
-}
-
-.services__info {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	margin-top: 50px;
-}
-
-.services__info_title {
-	font-size: 1.9rem;
-	font-weight: 300;
-	padding: 20px;
-	text-align: center;
-}
-
-.services__info_title strong {
-	font-size: 2.9rem;
-}
-
-.services__info_schedule {
-	display: grid;
-	grid-template-rows: repeat(3, 1fr);
-	padding: 30px;
-	font-size: 1.2rem;
-}
-
-.services_about {
-	display: grid;
-	grid-template-rows: repeat(4, 1fr);
-	padding: 50px 20px;
-	margin-top: 22px;
-	font-size: 1.1rem;
-}
-
-.services_about a {
-	color: #106d07;
-}
-
-.footer {
-	height: 130px;
+footer {
+	width: 100vw;
+	margin-top: 3.125rem;
 	background-color: #f2f2f2;
-	color: #7f847c;
-	font-size: 12px;
-	padding-left: 15px;
-	padding-top: 30px;
-	margin-top: 50px;
 }
-
