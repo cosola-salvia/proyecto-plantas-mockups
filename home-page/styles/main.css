@@ -1,0 +1,41 @@
+.wrapper {
+	width: 90vw;
+	margin-top: 3.5rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.plant-blog {
+	display: grid;
+	grid-template-columns: 250px 1fr 250px;
+	grid-auto-rows: auto;
+	grid-gap: 20px;
+	grid-template-areas: 
+	"blog-title blog-title blog-title"
+	"plant-biology overviews species-families";
+}
+
+.blog-title {
+	grid-area: blog-title;
+}
+.overviews {
+	grid-area: overviews;
+}
+
+.plant-bilogy {
+	grid-area: plant-biology;
+}
+
+.species-families {
+	grid-area: species-families;
+}
+
+.plant-type-family {
+/*	background-color: #87B3D6;*/
+  margin-bottom: 30px;
+}
+
+.plant-features {
+/*	background-color: #7CCBB0;*/
+  margin-bottom: 30px;
+}
